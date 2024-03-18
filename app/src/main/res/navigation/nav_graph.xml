@@ -14,6 +14,10 @@
             android:id="@+id/action_ListFragment_to_DetailsFragment"
             app:destination="@id/DetailsFragment" />
 
+        <action
+            android:id="@+id/action_ListFragment_to_CartFragment"
+            app:destination="@id/CartFragment" />
+
     </fragment>
 
     <fragment
@@ -21,6 +25,9 @@
         android:name="com.example.productsdemo.presentation.details.DetailsFragment"
         tools:layout="@layout/fragment_details">
 
+        <action
+            android:id="@+id/action_DetailsFragment_to_CartFragment"
+            app:destination="@id/CartFragment" />
 
         <argument
             android:name="product"
@@ -28,5 +35,10 @@
             />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/CartFragment"
+        android:name="com.example.productsdemo.presentation.cart.CartFragment"
+        tools:layout="@layout/fragment_cart"/>
 
 </navigation>
