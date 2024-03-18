@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.productsdemo.R
 import com.example.productsdemo.app.base.DataState
 import com.example.productsdemo.data.remote.models.Category
@@ -46,7 +47,8 @@ class HomeFragment : Fragment() {
         }
 
         productAdapter = ProductAdapter(requireContext()) {
-
+            val action  = HomeFragmentDirections.actionListFragmentToDetailsFragment(it)
+            findNavController().navigate(action)
         }
 
         initTabs()
