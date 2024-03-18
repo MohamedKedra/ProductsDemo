@@ -9,4 +9,8 @@ class ProductRepository @Inject constructor(
     private val dao: ProductDao
 ) {
 
+    suspend fun getAllProducts() = service.getAllProducts()
+    suspend fun getProductsByCategory(filter:String) = service.getProductsByCategory(filter)
+    suspend fun getAllCategories() = service.getAllCategories()
+
 }
