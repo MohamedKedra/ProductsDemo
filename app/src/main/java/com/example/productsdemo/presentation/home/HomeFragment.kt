@@ -8,12 +8,10 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.productsdemo.R
 import com.example.productsdemo.app.base.DataState
-import com.example.productsdemo.data.remote.models.Category
 import com.example.productsdemo.databinding.FragmentHomeBinding
 import com.example.productsdemo.presentation.home.adapter.CategoryAdapter
-import com.google.android.material.tabs.TabLayout
+import com.example.productsdemo.presentation.home.adapter.ProductAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,4 +1,4 @@
-package com.example.productsdemo.presentation.home
+package com.example.productsdemo.presentation.home.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.productsdemo.R
-import com.example.productsdemo.app.utils.Constant
 import com.example.productsdemo.data.remote.models.Product
 import com.example.productsdemo.databinding.ItemProductBinding
 
