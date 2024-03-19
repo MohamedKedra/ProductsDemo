@@ -14,9 +14,9 @@ import com.example.productsdemo.databinding.ItemProductBinding
 
 
 class ProductAdapter(private val context: Context, val onItemClick: (Product) -> Unit) :
-    ListAdapter<Product, ProductAdapter.MovieHolder>(ProductDiffCallback()) {
+    ListAdapter<Product, ProductAdapter.ProductHolder>(ProductDiffCallback()) {
 
-    inner class MovieHolder(private val itemProductBinding: ItemProductBinding) :
+    inner class ProductHolder(private val itemProductBinding: ItemProductBinding) :
         RecyclerView.ViewHolder(itemProductBinding.root), View.OnClickListener {
 
         init {
@@ -42,13 +42,13 @@ class ProductAdapter(private val context: Context, val onItemClick: (Product) ->
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductHolder {
         val view =
             ItemProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MovieHolder(view)
+        return ProductHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MovieHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProductHolder, position: Int) {
         holder.bind(getItem(position))
     }
 }
