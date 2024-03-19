@@ -13,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.productsdemo.R
 import com.example.productsdemo.databinding.FragmentDetailsBinding
+import com.example.productsdemo.presentation.home.HomeFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -46,6 +47,11 @@ class DetailsFragment : Fragment() {
 
                 ivBack.setOnClickListener {
                     findNavController().popBackStack()
+                }
+
+                ivCart.setOnClickListener {
+                    val action  = DetailsFragmentDirections.actionDetailsFragmentToCartFragment()
+                    findNavController().navigate(action)
                 }
 
                 Glide.with(requireContext()).load(image).placeholder(

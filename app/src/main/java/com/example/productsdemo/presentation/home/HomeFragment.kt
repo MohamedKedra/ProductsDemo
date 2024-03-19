@@ -89,11 +89,19 @@ class HomeFragment : Fragment() {
                 search.isVisible = !search.isVisible
                 searchView.setOnQueryTextListener(object : OnQueryTextListener {
                     override fun onQueryTextSubmit(query: String?): Boolean {
-                        val list = cachedList.filter {
+                        var list = cachedList.filter {
                             it.title?.lowercase()?.contains(query.toString().lowercase()) ?: false
                         }
-                        productAdapter.submitList(list)
-                        rvProducts.adapter = productAdapter
+                        if (list.isNotEmpty()) {
+                            productAdapter.submitList(list)
+                            rvProducts.adapter = productAdapter
+                        }else{
+                            showAppState(
+                                isLoading = false,
+                                isError = true,
+                                errorMsg = "Empty List"
+                            )
+                        }
                         return true
                     }
 
@@ -101,8 +109,17 @@ class HomeFragment : Fragment() {
                         val list = cachedList.filter {
                             it.title?.lowercase()?.contains(newText.toString().lowercase()) ?: false
                         }
-                        productAdapter.submitList(list)
-                        rvProducts.adapter = productAdapter
+                        if (list.isNotEmpty()) {
+                            showAppState(isLoading = false)
+                            productAdapter.submitList(list)
+                            rvProducts.adapter = productAdapter
+                        }else{
+                            showAppState(
+                                isLoading = false,
+                                isError = true,
+                                errorMsg = "Empty List"
+                            )
+                        }
                         return false
                     }
                 })

@@ -12,11 +12,13 @@
 
         <action
             android:id="@+id/action_ListFragment_to_DetailsFragment"
-            app:destination="@id/DetailsFragment" />
+            app:destination="@id/DetailsFragment"
+            />
 
         <action
             android:id="@+id/action_ListFragment_to_CartFragment"
-            app:destination="@id/CartFragment" />
+            app:destination="@id/CartFragment"
+            />
 
     </fragment>
 
