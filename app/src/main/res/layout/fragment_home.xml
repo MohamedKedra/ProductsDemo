@@ -143,7 +143,8 @@
                     android:visibility="gone"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:itemCount="4"
-                    tools:listitem="@layout/item_product" />
+                    tools:listitem="@layout/item_product"
+                    android:layout_marginBottom="40dp"/>
 
             </FrameLayout>
 
