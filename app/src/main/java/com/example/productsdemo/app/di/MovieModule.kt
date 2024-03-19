@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.productsdemo.app.utils.ConnectionManager
 import com.example.productsdemo.app.utils.Constant
-import com.example.moviesdemo.data.local.ProductDao
+import com.example.productsdemo.data.local.ProductDao
 import com.example.productsdemo.data.local.ProductDatabase
 import com.example.productsdemo.data.remote.ProductService
 import com.example.productsdemo.data.repository.ProductRepository
